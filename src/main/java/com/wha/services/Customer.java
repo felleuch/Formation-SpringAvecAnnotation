@@ -1,5 +1,8 @@
 package com.wha.services;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -22,6 +25,17 @@ public class Customer
 		return person;
 	}
 
+	
+	@PostConstruct
+	public void initIt() throws Exception{
+		System.out.println("Spring init method ..");
+	}
+	
+	
+	@PreDestroy
+	public void cleanUp() throws Exception {
+		System.out.println("Spring destroy method ..");
+	}
 
 	@Autowired
 	public void setPerson(Person person) {

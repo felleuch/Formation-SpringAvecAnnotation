@@ -17,11 +17,14 @@ public class Hello {
 		
 		String message = service.sayHello();
 		System.out.println(message);
-		
+		System.out.println("********************************************");
 		
 		
 		Customer cust = (Customer)context.getBean("CustomerBean");
     	System.out.println(cust.toString());
+    	
+    	
+    	((ClassPathXmlApplicationContext) context).close();
 		
 	}
 	
