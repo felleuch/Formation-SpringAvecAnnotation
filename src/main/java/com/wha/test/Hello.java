@@ -21,7 +21,15 @@ public class Hello {
 		
 		
 		Customer cust = (Customer)context.getBean("CustomerBean");
+		
+		System.out.println("Customer username="+cust.getUsername());
+		
+		System.out.println("Customer type de security="+cust.getTypeSecurity());
+		
     	System.out.println(cust.toString());
+    	
+    	
+    	
     	
     	
     	((ClassPathXmlApplicationContext) context).close();

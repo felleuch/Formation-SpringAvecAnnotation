@@ -15,6 +15,34 @@ public class Customer
 	
 	private Person person;
 	
+	private String username;
+	
+	
+	public String typeSecurity;
+	
+	
+	
+	
+	public String getTypeSecurity() {
+		return typeSecurity;
+	}
+
+
+	public void setTypeSecurity(String typeSecurity) {
+		this.typeSecurity = typeSecurity;
+	}
+
+
+	public String getUsername() {
+		return username;
+	}
+
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+
 	private int type;
 	
 	private String action;
