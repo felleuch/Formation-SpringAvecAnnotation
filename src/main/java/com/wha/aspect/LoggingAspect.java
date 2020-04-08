@@ -7,12 +7,13 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
 public class LoggingAspect {
 
 	
-	@Before("execution(* com.wha.services.HelloWorldService.sayHello(..))")
+	@Before("methodSayHello()  ||    methodGetAllCustomers()")
 	public void logBefore(JoinPoint joinPoint) {
 
 		System.out.println("logBefore() is running!");
@@ -21,6 +22,15 @@ public class LoggingAspect {
 	}
 	
 	
+	@Pointcut("execution(* com.wha.services.HelloWorldService.sayHello(..))")
+	private void methodSayHello() {}
+	
+	@Pointcut("execution(* com.wha.services.CustomerService.getAllCustomers(..))")
+	private void methodGetAllCustomers() {}
+	
+	
+	
+	/*
 	@Around("execution(* com.wha.services.HelloWorldService.sayHello(..))")
 	public void logAround(ProceedingJoinPoint joinPoint) throws Throwable {
 
@@ -35,6 +45,7 @@ public class LoggingAspect {
 		System.out.println("******");
 
 	}
+	*/
 	
 	
 }
