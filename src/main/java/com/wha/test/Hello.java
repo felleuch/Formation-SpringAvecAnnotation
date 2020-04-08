@@ -16,6 +16,8 @@ public class Hello {
 		HelloWorldService service = (HelloWorldService) context.getBean("helloWorldService");
 		
 		String message = service.sayHello();
+		
+		/*
 		System.out.println(message);
 		System.out.println("********************************************");
 		
@@ -27,12 +29,12 @@ public class Hello {
 		System.out.println("Customer type de security="+cust.getTypeSecurity());
 		
     	System.out.println(cust.toString());
+    	*/
     	
     	
     	
     	
-    	
-    	((ClassPathXmlApplicationContext) context).close();
+    	//((ClassPathXmlApplicationContext) context).close();
 		
 	}
 	
